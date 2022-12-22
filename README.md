@@ -1,6 +1,6 @@
 # godzilla
 
-A new Flutter project(being developed.
+A new Flutter project (being developed).
 
 ## Getting Started
 

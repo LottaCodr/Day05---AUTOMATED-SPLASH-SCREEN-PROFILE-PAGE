@@ -21,35 +21,39 @@ class _WakePageState extends State<WakePage> {
             icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
-        body: Column(
-          children: [
-            Image.asset('images/godzilla.jpg'),
-            const SizedBox(
-              height: 10,
-            ),
-            const Divider(
-              color: Colors.black,
-            ),
-            Container(
-              margin: const EdgeInsets.all(10.0),
-              padding: const EdgeInsets.all(10.0),
-              color: Colors.blueGrey,
-              width: double.infinity,
-              child: const Center(
-                  child: Text(
-                "Who dares to summon me?",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              )),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                debugPrint('I dare');
-              },
-              child: const Text('I Dare'),
-            ),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset('images/godzilla.jpg'),
+              const SizedBox(
+                height: 10,
+              ),
+              const Divider(
+                color: Colors.black,
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
+                color: Colors.blueGrey,
+                width: double.infinity,
+                child: const Center(
+                    child: Text(
+                  "Who dares to summon me?",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                )),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  debugPrint('I dare');
+                },
+                child: const Text('I Dare'),
+              ),
+              Image.network(
+                  'https://www.looper.com/img/gallery/every-king-kong-movie-ranked-worst-to-best/intro-1617312244.jpg'),
+            ],
+          ),
         ));
   }
 }

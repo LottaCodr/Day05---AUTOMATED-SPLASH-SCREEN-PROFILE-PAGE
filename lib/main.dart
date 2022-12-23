@@ -4,6 +4,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,19 +18,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const HomePage(),
+      home: const RootPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class RootPage extends StatefulWidget {
+  const RootPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<RootPage> createState() => _RootPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _RootPageState extends State<RootPage> {
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,11 @@ class _HomePageState extends State<HomePage> {
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
         ],
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPage = index;
+          });
+        },
       ),
     );
   }

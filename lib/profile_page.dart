@@ -12,6 +12,11 @@ class ProfilePage extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           title: Text('Challenger ${(index + 1)}'),
+          leading: const Icon(Icons.person),
+          trailing: const Icon(Icons.select_all),
+          onTap: () {
+            debugPrint('${(index + 1)}');
+          },
         );
       },
     );
